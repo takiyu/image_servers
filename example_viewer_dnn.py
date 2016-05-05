@@ -9,9 +9,6 @@ import numpy as np
 import six
 import time
 
-import sys
-sys.path.append('../image_servers')
-
 import log_initializer
 
 import imgviewer

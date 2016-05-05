@@ -11,9 +11,6 @@ try:
 except:
     import queue as Queue
 
-import sys
-sys.path.append('../image_servers')
-
 import imguploader
 import dnn
 
