@@ -20,7 +20,7 @@ def decodeimg(img):
     '''decode from jpg/png base64 string image'''
     try:
         img = img[img.find(',') + 1:]
-        img = base64.decodestring(img)
+        img = base64.decodestring(img.encode('ascii'))
         img = np.fromstring(img, dtype=np.uint8)
         img = cv2.imdecode(img, 1)
         return img
@@ -36,7 +36,7 @@ def encodeimg(img, ext='.png'):
             raise
         img = img.tostring()
         img = base64.encodestring(img)
-        img = 'data:image/png;base64,' + img
+        img = 'data:image/png;base64,' + img.decode('ascii')
         return img
     except Exception:
         logger.error('Failed to encodeimg()')

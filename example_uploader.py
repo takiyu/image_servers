@@ -7,7 +7,10 @@ import cv2
 from logging import getLogger, DEBUG, INFO, WARNING
 import multiprocessing
 import time
-import Queue
+try:
+    import Queue  # python2
+except:
+    import queue as Queue  # python3
 
 import imguploader
 

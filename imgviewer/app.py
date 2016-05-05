@@ -24,7 +24,7 @@ def encodeimg(img, ext='.png'):
             raise
         img = img.tostring()
         img = base64.encodestring(img)
-        img = 'data:image/png;base64,' + img
+        img = 'data:image/png;base64,' + img.decode('ascii')
         return img
     except Exception:
         logger.error('Failed to encodeimg()')
@@ -46,7 +46,7 @@ def setImgWidthElement(data, img_key, width_key, resize=True):
         width = data[width_key]
         # resize to make the image smaller
         if resize and width < img.shape[1]:
-            height = width * img.shape[0] / img.shape[1]
+            height = int(width * img.shape[0] / img.shape[1])
             logger.debug('Resize to (%d, %d)' % (width, height))
             data[img_key] = cv2.resize(img, (width, height))
     except KeyError:
