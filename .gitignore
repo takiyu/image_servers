@@ -2,3 +2,5 @@
 *.swo
 *.swn
 *.pyc
+*.caffemodel
+*.pkl
