@@ -1,6 +1,5 @@
 var socket = io.connect('/viewer');
 
-var Thumbnail = ReactBootstrap.Thumbnail;
 var Nav = ReactBootstrap.Nav;
 var Navbar = ReactBootstrap.Navbar;
 var NavItem = ReactBootstrap.NavItem;
@@ -12,10 +11,10 @@ var ImageView = React.createClass({
     },
     render() {
       return (
-        <div>
-          <Thumbnail
-           src={this.props.data.img || ""}
-           style={{width: this.props.data.width || 'auto', marginBottom: '0px'}}
+        <div className="thumbnail"
+         style={{marginBottom: '0px'}}>
+          <img src={this.props.data.img || ""}
+           style={{width: this.props.data.width || 'auto'}}
            className="img-responsive" >
             {(() => {
                   if (this.props.data.cap) {
@@ -29,7 +28,7 @@ var ImageView = React.createClass({
                     );
                   }
             })()}
-          </ Thumbnail>
+          </img>
         </div>
       );
     }
