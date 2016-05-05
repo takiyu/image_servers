@@ -16,7 +16,8 @@ download `bvlc_googlenet.caffemodel` to `dnn_models` (see `dnn.py`).
 
 ## Screenshots ##
 ### Viewer ###
-<img src="https://raw.githubusercontent.com/takiyu/image_viewer/master/screenshots/viewer1.png" width="400px">
-<img src="https://raw.githubusercontent.com/takiyu/image_viewer/master/screenshots/viewer2.png" width="400px">
+<img src="https://raw.githubusercontent.com/takiyu/image_servers/master/screenshots/viewer1.png" width="400px">
+<img src="https://raw.githubusercontent.com/takiyu/image_servers/master/screenshots/viewer2.png" width="400px">
 
 ### Uploader ###
+<img src="https://raw.githubusercontent.com/takiyu/image_servers/master/screenshots/uploader1.png" width="400px">
