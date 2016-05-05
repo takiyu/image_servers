@@ -75,7 +75,7 @@ var TabNavigator = React.createClass({
         <Nav bsStyle="tabs"
              activeKey={this.props.activeTab}
              onSelect={this.handleSelect}>
-          {this.props.tabNames.map((name, idx) => {
+             {this.props.tabNames.sort().map((name, idx) => {
                 if (name) {
                   return (
                     <NavItem key={name} eventKey={name}>{name}</NavItem>
@@ -111,7 +111,7 @@ var MainView = React.createClass({
     onUpdate(values) {
       var that = this;
       if (!values) return;
-      values.forEach(function(v) {
+      values.forEach(function(v, i) {
           if (!v) return;  // empty
           var tab = v[0];
           var name = v[1];
@@ -123,7 +123,10 @@ var MainView = React.createClass({
             that.removeTab(tab);
           }
           // update image
-          that.updateImage(tab, name, data);
+          that.state.imagesCollection[tab][name] = data; // set
+          if (i == values.length - 1) { // update
+            that.setState({imagesCollection: that.state.imagesCollection});
+          }
       });
     },
     createTab(tab) {
@@ -152,10 +155,6 @@ var MainView = React.createClass({
           this.setState({activeTab: null});
         }
       }
-    },
-    updateImage(tab, name, data) {
-      this.state.imagesCollection[tab][name] = data;
-      this.setState({imagesCollection: this.state.imagesCollection});
     },
     changeActiveTab(tab) {
       this.setState({activeTab: tab});
