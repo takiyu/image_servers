@@ -16,6 +16,9 @@ logger.addHandler(NullHandler())
 # disable werkzeug logger
 werkzeug_logger = getLogger('werkzeug')
 werkzeug_logger.setLevel(CRITICAL)
+# disable werkzeug logger
+engineio_logger = getLogger('engineio')
+engineio_logger.setLevel(CRITICAL)
 
 
 IO_NAMESPACE = '/viewer'
