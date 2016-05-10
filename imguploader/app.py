@@ -8,10 +8,14 @@ import numpy as np
 
 
 # logging
-from logging import getLogger, NullHandler, DEBUG
+from logging import getLogger, NullHandler, CRITICAL
 logger = getLogger(__name__)
 logger.addHandler(NullHandler())
-logger.setLevel(DEBUG)
+
+# disable werkzeug logger
+werkzeug_logger = getLogger('werkzeug')
+werkzeug_logger.setLevel(CRITICAL)
+
 
 IO_NAMESPACE = '/uploader'
 
