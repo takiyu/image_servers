@@ -169,7 +169,7 @@ def new_server(viewer_queue, stop_page, port, secret_key):
     # rooting
     @app.route('/')
     def __index():
-        logger.info('Render uploader page')
+        logger.info('Render viewer page')
         return render_template('index.html', script="index.js")
 
     if stop_page:
