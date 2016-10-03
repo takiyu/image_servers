@@ -135,7 +135,7 @@ var VideoUI = React.createClass({
           // draw canvas with no shapes
           that.refs.videocanvas.drawVideo();
           // get image data
-          var data = that.refs.videocanvas.c.toDataURL('image/png');
+          var data = that.refs.videocanvas.c.toDataURL('image/jpeg');
           // emit
           socket.emit('upload_img', {img: data, region: that.region});
           // draw shapes for usability

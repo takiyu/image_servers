@@ -40,14 +40,14 @@ def decodeimg(img):
         return None
 
 
-def encodeimg(img, ext='.png'):
+def encodeimg(img, ext='.jpeg'):
     try:
         ret, img = cv2.imencode(ext, img)
         if not ret:
             raise
         img = img.tostring()
         img = base64.encodestring(img)
-        img = 'data:image/png;base64,' + img.decode('ascii')
+        img = 'data:image/jpeg;base64,' + img.decode('ascii')
         return img
     except Exception:
         logger.error('Failed to encodeimg()')
@@ -114,7 +114,7 @@ def new_server(request_queue, response_queue, stop_page, port, secret_key):
         if request_queue is None:
             return
 
-        # decode from png base64 string
+        # decode from jpeg base64 string
         try:
             img = data['img']
         except KeyError:
