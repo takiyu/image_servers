@@ -59,9 +59,9 @@ if __name__ == '__main__':
             # set large image with caption (without resize)
             name = 'l-%d' % num
             viewer_queue.put((tabs[0], name, {'img': img,
-                                              'cap': 'caption (num %d)' % num}))
+                                              'cap': 'caption (n %d)' % num}))
             viewer_queue.put((tabs[1], name, {'img': gray,
-                                              'cap': 'caption (num %d)' % num}))
+                                              'cap': 'caption (n %d)' % num}))
         elif mode == 3:
             if num <= 5:
                 # remove images

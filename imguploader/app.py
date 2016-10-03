@@ -168,7 +168,7 @@ def start(request_queue, response_queue=None, stop_page=True, port=5000,
     If there are no need to use IO, set corresponding queues to `None`.
     '''
     process = multiprocessing.Process(target=new_server,
-                                      args=(request_queue, response_queue, stop_page,
-                                            port, secret_key))
+                                      args=(request_queue, response_queue,
+                                            stop_page, port, secret_key))
     process.daemon = True
     process.start()

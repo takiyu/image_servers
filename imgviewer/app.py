@@ -84,6 +84,7 @@ def encodeImgElement(data, key):
 
 
 class ImageBufferingThread(threading.Thread):
+
     def __init__(self, input_queue):
         threading.Thread.__init__(self)
         self.pool = {}
@@ -153,7 +154,8 @@ class ImageBufferingThread(threading.Thread):
         return dst
 
     def register_update_event_func(self, update_event):
-        if isinstance(update_event, types.FunctionType) or update_event is None:
+        if isinstance(update_event, types.FunctionType) or \
+           update_event is None:
             self.update_event = update_event
         else:
             logger.error('Update event must be a function or None')
