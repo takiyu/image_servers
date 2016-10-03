@@ -4,6 +4,7 @@ import cv2
 from flask import Flask, render_template
 from flask_socketio import SocketIO, emit
 import multiprocessing
+import os
 import threading
 import types
 
@@ -217,7 +218,7 @@ def new_server(viewer_queue, stop_page, port, secret_key):
     logger.info('Stop server on port %d' % port)
 
 
-def start(viewer_queue, stop_page=True, port=5000, secret_key='SECRET_KEY'):
+def start(viewer_queue, stop_page=True, port=5000, secret_key=os.urandom(24)):
     process = multiprocessing.Process(target=new_server,
                                       args=(viewer_queue, stop_page,
                                             port, secret_key))

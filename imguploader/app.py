@@ -5,6 +5,7 @@ from flask import Flask, render_template
 from flask_socketio import SocketIO, emit
 import multiprocessing
 import numpy as np
+import os
 
 
 # logging
@@ -150,7 +151,7 @@ def new_server(request_queue, response_queue, stop_page, port, secret_key):
 
 
 def start(request_queue, response_queue=None, stop_page=True, port=5000,
-          secret_key='SECRET_KEY'):
+          secret_key=os.urandom(24)):
     '''Start new image uploading server on `port`.
     This function create new daemon process and start it.
 
