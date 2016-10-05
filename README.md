@@ -5,10 +5,16 @@ Each module is written with Flask, Flask-Socketio and ReactJS,
 so client browser will be notified of some changes immediately.
 
 ## Dependences ##
-* Python2 (or 3)
-* Flask
-* Flask-Socketio
-* OpenCV
+* Python 2 (or 3)
+* OpenCV 2 (or 3)
+* Flask >=0.10.1
+* Flask_SocketIO >=2.2
+* eventlet (for `Live Uploader`)
+
+## Server Modules ##
+* Viewer
+* Uploader
+* Live Uploader
 
 ## DNN Examples ##
 To run DNN examples, please install chainer and
