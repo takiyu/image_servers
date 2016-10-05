@@ -23,5 +23,6 @@ Visualize each CNN layer
 
 ### Uploader ###
 <img src="https://raw.githubusercontent.com/takiyu/image_servers/master/screenshots/uploader1.png" width="400px">
+<img src="https://raw.githubusercontent.com/takiyu/image_servers/master/screenshots/uploader2.png" width="400px">
 
 Capture client webcam, upload to server and predict it (the upper picture is `clock`).
